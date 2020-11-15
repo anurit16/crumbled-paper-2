@@ -8,10 +8,13 @@ var dustbin1,dustbin2,dustbin3,dustbinimg,paper,ground;
 var box3,box4,box5;
 
 
+ function preload(){
+    dustbinimg = loadImage("dustbingreen.png");
 
+ }
 function setup() {
-	createCanvas(1800, 600);
-
+	createCanvas(1000, 400)
+	
 	myEngine=Engine.create();
 	myWorld = myEngine.world;
   
@@ -21,12 +24,13 @@ function setup() {
 
 	//Create the Bodies Here.
 
-	ground = new Ground(900,550,1800,20);
-	dustbin1 = new Dustbin(1600,530,300,20);
-	dustbin2 = new Dustbin(1450,430,20,200);
-	dustbin3 = new Dustbin(1750,430,20,200);
-	dustbinimg = new DustbinImage(1600,430,300,200)
-	paper = new Paper(100,300,50);
+	ground = new Ground(500,350,1000,20);
+	dustbin1 = new Dustbin(850,330,200,20);
+	dustbin2 = new Dustbin(750,280,20,130);
+	dustbin3 = new Dustbin(950,280,20,130);
+//	dustbinimg = new DustbinImage(1600,430,300,200);
+	
+	paper = new Paper(100,310,30);
 	
 }
 
@@ -37,11 +41,12 @@ function draw() {
   Engine.update(myEngine);
   
   ground.display(); 
-  dustbin1.display(); 
-  dustbin2.display(); 
-  dustbin3.display(); 
+  //dustbin1.display(); 
+  //dustbin2.display(); 
+  //dustbin3.display(); 
   paper.display();
-  dustbinimg.display();
+  //dustbinimg.display();
+  image(dustbinimg,750,210,200,130);
 
  
 }
